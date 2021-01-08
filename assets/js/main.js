@@ -17,8 +17,22 @@ let app = new Vue({
     },
     methods:{
         tenMails(array, index){
-            for (let i = 0; i < 11; i++) {
-               array.push(index);
+            // let checkMail = false;
+            // for (let i = 0; i < 10; i++) {
+            //     const element = array[index];
+            //     if (element == index) {
+            //         checkMail = true;
+            //     }
+            //     if (checkMail = true) {
+            //         array.push(index);
+            //     }
+            // //    array.push(index);
+            // }
+            for (let i = 0; i < 10; i++) {
+                const element = array[i];
+                if (!array.includes(element)) {
+                     array.push(index);
+                }
             }
         },
     },
