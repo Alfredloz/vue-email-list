@@ -15,35 +15,17 @@ let app = new Vue({
         mails:[],
         prova: '',
     },
-    methods:{
-        tenMails(array, index){
-            // let checkMail = false;
-            // for (let i = 0; i < 10; i++) {
-            //     const element = array[index];
-            //     if (element == index) {
-            //         checkMail = true;
-            //     }
-            //     if (checkMail = true) {
-            //         array.push(index);
-            //     }
-            // //    array.push(index);
-            // }
-            for (let i = 0; i < 10; i++) {
-                const element = array[i];
-                if (!array.includes(element)) {
-                     array.push(index);
-                }
-            }
-        },
-    },
     mounted(){
-        axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
+        for (let i = 0; i < 10; i++) {
+            axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
         .then(response =>{
         //   console.log(response.data.response);
             const mailPushed = response.data.response;
-            console.log(mailPushed);
-            this.tenMails(this.mails, mailPushed);
+            this.mails.push(mailPushed)
             console.log(this.mails);
+            // this.tenMails(this.mails, mailPushed);
+            // console.log(this.mails);
         })
+        }
     }
 })
