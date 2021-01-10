@@ -8,12 +8,11 @@
     <title>Vue mail-list</title>
 </head>
 <body>
-    <div id="app" class="d_flex">
-        <div class="box_number d_flex" v-on:click="randomNumber">
-            <span class="random_numb box_number" v-for="(numb, index) in numbs" :class="numb < 5 ? 'yellow':'green'">{{numb}}</span>
+    <div id="app">
+        <span class="btn" @click="randomNumber">Clicca per generare numeri</span>
+        <div class="d_flex box_wrap" >
+            <span class=" box_number" v-for="(numb, index) in numbs" :class="numb < 5 ? 'yellow':'green'">{{numb}}</span>
         </div>
-
-        
     </div>
     <!-- vue and js files -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>

@@ -10,7 +10,7 @@ let app = new Vue({
         numbs: [],
     },
     methods:{
-        randomNumber(index){
+        randomNumber(){
             for (let i = 0; i < 36; i++) {
                 axios.get('https://flynn.boolean.careers/exercises/api/random/int')
             .then(response =>{
